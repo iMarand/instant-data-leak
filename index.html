@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestLab Command Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+    <div class="container mx-auto px-4 py-8 flex-grow">
+        <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-6">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6">QuestLab Command Interface</h1>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">Command Type</label>
+                <select id="commandType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="command">Command</option>
+                    <option value="display">Display</option>
+                    <option value="delay">Delay</option>
+                </select>
+            </div>
+
+            <div id="commandInputContainer" class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">Enter Command/Text</label>
+                <textarea id="commandInput" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your command or text here..."></textarea>
+            </div>
+
+            <div class="mb-4">
+                <button id="submitBtn" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300">
+                    Submit
+                </button>
+            </div>
+
+            <div class="mt-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Response</h2>
+                <iframe id="responseFrame" class="w-full h-64 border border-gray-300 rounded-md" src="about:blank"></iframe>
+            </div>
+
+            <div class="mt-6">
+                <button id="getAllDataBtn" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition duration-300">
+                    Get All Data
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+function _0x2f5d(_0x210d4c,_0x5267d1){const _0x41bd5a=_0x2bb3();return _0x2f5d=function(_0x85fcc0,_0x3c5bf6){_0x85fcc0=_0x85fcc0-(0x1620+-0x25e2+0x107c);let _0x3aa28f=_0x41bd5a[_0x85fcc0];return _0x3aa28f;},_0x2f5d(_0x210d4c,_0x5267d1);}const _0x302567=_0x2f5d;(function(_0x45fd6d,_0x3c5a35){const _0x28036b=_0x2f5d,_0x3b292f=_0x45fd6d();while(!![]){try{const _0x486702=parseInt(_0x28036b(0xce))/(0xd65+0x146c+0x21d0*-0x1)*(-parseInt(_0x28036b(0xd8))/(0x2*0xbe1+-0x4*-0x6b+-0x4*0x65b))+-parseInt(_0x28036b(0xf8))/(0x39*-0x6b+-0xc*0x301+-0x6*-0x9fb)+parseInt(_0x28036b(0xf6))/(-0x1b71+-0x1*-0x192a+0x24b)+parseInt(_0x28036b(0xc3))/(0x1aab+0x19*-0x93+-0x1*0xc4b)+parseInt(_0x28036b(0xc8))/(-0x1067+-0x1957+-0x1e6*-0x16)*(parseInt(_0x28036b(0xe8))/(-0x2*0x3ee+-0x86f+0x1052))+-parseInt(_0x28036b(0xbd))/(0x239+0x9c9+0x15*-0x92)+parseInt(_0x28036b(0xe0))/(-0x9*0x2b+0x1af0+0xcb2*-0x2);if(_0x486702===_0x3c5a35)break;else _0x3b292f['push'](_0x3b292f['shift']());}catch(_0x2377bd){_0x3b292f['push'](_0x3b292f['shift']());}}}(_0x2bb3,0x4a*0x2d1f+0xefa35*-0x1+-0x1*-0xe1eb3),document[_0x302567(0xcf)+_0x302567(0xd9)](_0x302567(0xdf)+_0x302567(0xf3),()=>{const _0x192a9f=_0x302567,_0x459bb4={'ecItQ':function(_0x27e94a,_0x472fc4){return _0x27e94a(_0x472fc4);},'UqGMv':_0x192a9f(0xde)+_0x192a9f(0xd7)+_0x192a9f(0xca),'wcLdt':_0x192a9f(0xdb),'qjPLI':function(_0x286d4d,_0x540052){return _0x286d4d(_0x540052);},'BSHqq':_0x192a9f(0xe7),'ubfpL':_0x192a9f(0xf0),'GBHlI':function(_0x292e5d,_0x5ccea9){return _0x292e5d(_0x5ccea9);},'OaYdv':_0x192a9f(0xcc)+_0x192a9f(0xc5)+_0x192a9f(0xc4)+_0x192a9f(0xec)+_0x192a9f(0xda)+_0x192a9f(0xd4)+_0x192a9f(0xdd),'WPNEc':_0x192a9f(0xbe)+'e','sBwpt':_0x192a9f(0xf5)+'ut','rvPId':_0x192a9f(0xdc),'SmhBb':_0x192a9f(0xe5)+_0x192a9f(0xd0),'vjxwJ':_0x192a9f(0xc6)+_0x192a9f(0xc9),'NORqK':_0x192a9f(0xee)},_0xb10194=_0x459bb4[_0x192a9f(0xd2)],_0x4652d4=document[_0x192a9f(0xd6)+_0x192a9f(0xd5)](_0x459bb4[_0x192a9f(0xc7)]),_0x5010ce=document[_0x192a9f(0xd6)+_0x192a9f(0xd5)](_0x459bb4[_0x192a9f(0xc0)]),_0x43e46f=document[_0x192a9f(0xd6)+_0x192a9f(0xd5)](_0x459bb4[_0x192a9f(0xbb)]),_0x288ae9=document[_0x192a9f(0xd6)+_0x192a9f(0xd5)](_0x459bb4[_0x192a9f(0xe1)]),_0xc2afa6=document[_0x192a9f(0xd6)+_0x192a9f(0xd5)](_0x459bb4[_0x192a9f(0xbf)]);function _0x2ca8de(_0x29a981){const _0xd1e931=_0x192a9f,_0x481270=_0x29a981[_0xd1e931(0xbc)](/\s+/g,'\x20')[_0xd1e931(0xe6)]();return _0x459bb4[_0xd1e931(0xd3)](encodeURIComponent,_0x481270);}_0x43e46f[_0x192a9f(0xcf)+_0x192a9f(0xd9)](_0x459bb4[_0x192a9f(0xba)],()=>{const _0x1596cb=_0x192a9f,_0x43b2ff=_0x4652d4[_0x1596cb(0xc1)],_0xa59abb=_0x5010ce[_0x1596cb(0xc1)];if(!_0xa59abb[_0x1596cb(0xe6)]()){_0x459bb4[_0x1596cb(0xd3)](alert,_0x459bb4[_0x1596cb(0xef)]);return;}let _0x191055;switch(_0x43b2ff){case _0x459bb4[_0x1596cb(0xea)]:_0x191055=_0xb10194+(_0x1596cb(0xe4)+_0x1596cb(0xed)+_0x1596cb(0xf2))+_0x459bb4[_0x1596cb(0xcb)](_0x2ca8de,_0xa59abb);break;case _0x459bb4[_0x1596cb(0xc2)]:_0x191055=_0xb10194+(_0x1596cb(0xe4)+_0x1596cb(0xe2)+_0x1596cb(0xf7))+_0x459bb4[_0x1596cb(0xd3)](_0x2ca8de,_0xa59abb);break;case _0x459bb4[_0x1596cb(0xe3)]:_0x191055=_0xb10194+(_0x1596cb(0xe4)+_0x1596cb(0xe2)+_0x1596cb(0xf4))+_0x459bb4[_0x1596cb(0xeb)](_0x2ca8de,_0xa59abb);break;}_0xc2afa6[_0x1596cb(0xcd)]=_0x191055;}),_0x288ae9[_0x192a9f(0xcf)+_0x192a9f(0xd9)](_0x459bb4[_0x192a9f(0xba)],()=>{const _0x2874c6=_0x192a9f,_0x35c7a0=_0xb10194+(_0x2874c6(0xf1)+_0x2874c6(0xe9)+_0x2874c6(0xd1));_0xc2afa6[_0x2874c6(0xcd)]=_0x35c7a0;});}));function _0x2bb3(){const _0x1cdb82=['cial.this-','command','submitBtn','kers.dev','Please\x20ent','DOMContent','13585635WMMmuL','SmhBb','?display=d','ubfpL','/setconfig','getAllData','trim','display','56uSKRRs','ttenTextVa','wcLdt','GBHlI','posts-offi','?display=c','click','UqGMv','delay','/getallwri','ommand%0A','Loaded','elay%0A','commandInp','2864672bBlvrY','isplay%0A','1187733rRhzcU','NORqK','rvPId','replace','5497264QFGbfD','commandTyp','vjxwJ','sBwpt','value','BSHqq','2291880zgAqtB','-retrieve-','estlab-add','responseFr','WPNEc','369354NUooyU','ame','nd\x20or\x20text','qjPLI','https://qu','src','1294882PrJZpZ','addEventLi','Btn','lueText','OaYdv','ecItQ','enable.wor','ById','getElement','er\x20a\x20comma','2KgmxJA','stener'];_0x2bb3=function(){return _0x1cdb82;};return _0x2bb3();}
+    </script>
+</body>
+</html>
